@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="lingoApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countries</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"></script>
+</head>
+<body ng-controller="lingoController">
+<h1>Test your knowledge!</h1>
+
+<form ng-submit='startQuiz()'>
+    <input ng-model="testLanguage" placeholder="Enter the language you would like to study" style="width: 400px"><br>
+<!--    <input ng-model="language.currentLanguage" placeholder="Enter your current language">-->
+    <input type="submit">
+</form>
+
+<div>
+    In English: 
+</div>
+<div>
+ {{randomWord}}
+</div>
+
+<input placeholder="Your answer" ng-model="yourAnswer" style="width: 400px">
+<button ng-click="checkIt()">Check your answer!</button>
+<div ng-show="correct">Great job, you got it right!</div>
+<div ng-show="wrong">Wrong answer.</div>
+<div ng-show="showTranslation">Translation: {{translatedWord}}</div>
+<div ng-show="again">
+    <button ng-click="nextQuestion()">Next Question</button>
+</div>
+<div ng-show="gameOver">
+    Game over...
+</div>
+
+
+<script src="javascripts/main.js"></script>
+</body>
+</html>
